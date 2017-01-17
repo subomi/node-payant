@@ -1,0 +1,34 @@
+{
+  "name": "node-payant",
+  "version": "1.0.0",
+  "description": "a nodejs payant api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Subomi/node-payant.git"
+  },
+  "keywords": [
+    "API",
+    "Payments",
+    "Fintech",
+    "Payant",
+    "Node", 
+    "Naira"
+  ],
+  "dependencies": {
+    "request": "^2.67.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0"
+  },
+  "author": "Subomi Oluwalana <subomioluwalana71@gmail.com> (127.0.0.1)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Subomi/node-payant/issues"
+  },
+  "homepage": "https://github.com/Subomi/node-payant#readme"
+}

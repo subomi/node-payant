@@ -2,7 +2,7 @@
 A nodejs API for [Payant](https://payant.ng).
 
 ### Installation
-```
+```js
 npm install node-payant
 ```
 
@@ -36,13 +36,12 @@ npm install node-payant
 | **Products.enable**    | Nil     | Yes - `code, token`     |
 | **Products.get**       | Yes     | Nil        |
 | **Products.list**      | Nil     | Nil        |
-|------------------------|---------|------------|
 
 The parameters specified in the third column are the complusory ones. But they are not limited to them alone. Check over at 
 [Payant](https://developers.payant.ng) for the complete list.
 
 ### Examples
-```
+```js
 // Requiring the library
 const payant = require('node-payant')(secret_key);
 
