@@ -18,25 +18,28 @@ npm install node-payant
 | **Clients.get**        | Yes     | Nil        |
 | **Clients.edit**       | Yes     | Yes - `firstname, lastname, email, phone`  |
 | **Clients.delete**     | Yes     | Nil        |
-|------------------------|---------|------------|
+| | | |
 | **Invoices.add**       | Nil     | Yes - `firstname, lastname, email, phone`  |
 | **Invoices.get**       | Yes     | Nil        |
 | **Invoices.send**      | Yes     | Nil        |
 | **Invoices.history**   | Nil     | Yes - `period` |
 | **Invoices.delete**    | Yes     | Nil        |
-|------------------------|---------|------------|
+| | | |
 | **misc.getBanks**      | Nil     | Nil        |
-|------------------------|---------|------------|
+| | | |
 | **Payments.create**    | Nil     | Yes - `reference_code, date, amount, channel` |
 | **Payments.get**       | Yes     | Nil        |
 | **Payments.history**   | Nil     | Yes - `period` |
-|------------------------|---------|------------|
+| | | |
 | **Products.create**    | Nil     | Yes - `customer, plan`  |
 | **Products.disable**   | Nil     | Yes - `code, token`     |
 | **Products.enable**    | Nil     | Yes - `code, token`     |
 | **Products.get**       | Yes     | Nil        |
 | **Products.list**      | Nil     | Nil        |
 |------------------------|---------|------------|
+
+The parameters specified in the third column are the complusory ones. But they are not limited to them alone. Check over at 
+[Payant](https://developers.payant.ng) for the complete list.
 
 ### Examples
 ```
