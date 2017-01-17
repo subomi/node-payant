@@ -34,7 +34,7 @@ module.exports = {
     },
 
   //  Delete Invoice
-  delete: {
+  'delete': {
       method: 'delete',
       endpoint: [root, '/{ref}'].join(''),
       args: ['ref']

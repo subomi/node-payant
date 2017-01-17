@@ -4,45 +4,35 @@ var root = '/products';
 
 module.exports = {
 
-  /*
-  Create subscription
-  */
+  //  Create Product
   create: {
       method: 'post',
       endpoint: root,
       params: ['customer*', 'plan*', 'authorization']
     },
 
-  /*
-  Disable subscription
-  */
+  //  Disable Product
   disable: {
       method: 'post',
       endpoint: root,
       params: ['code*', 'token*']
     },
 
-  /*
-  Enable subscription
-  */
+  //  Enable Product
   enable: {
       method: 'post',
       endpoint: root,
       params: ['code*', 'token*']
     },
 
-  /*
-  Get subscription
-  */
+  // Get Product
   get: {
       method: 'get',
       endpoint: [root, '/{ref_or_subscription_code}'].join(''),
       args: ['ref_or_subscription_code']
   },
-
-  /*
-  List subscription
-  */
+  
+  // List Product
   list: {
       method: 'get',
       endpoint: root
