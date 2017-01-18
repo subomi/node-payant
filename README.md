@@ -41,9 +41,22 @@ The parameters specified in the third column are the complusory ones. But they a
 [Payant](https://developers.payant.ng) for the complete list.
 
 ### Examples
+The Payant constructor takes in two arguments in a particular order.
+- secret_key: Your secret key derived from your payant dashboard.
+- demo_flag: It is used to set your endpoint either for production or testing, It is your default endpoint, to remove it in production set it to false. 
+
 ```js
 // Requiring the library
-const payant = require('node-payant')(secret_key);
+var Payant = require('node-payant');
+
+// To set endpoint for demo
+Payant = Payant(secret_key);
+
+// OR 
+Payant = Payant(secret_key, true);
+
+// To set endpoint for production
+Payant = Payant(secret_key, false);
 
 // Adding a new client
 payant.clients.add({

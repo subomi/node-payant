@@ -1,7 +1,6 @@
 'use strict';
 
-var request = require('request'),
-	root = 'https://api.payant.ng';
+var request = require('request');
 
 var resources = {
 	clients: require('./resources/clients'),
@@ -11,13 +10,14 @@ var resources = {
     misc: require('./resources/misc'),
 }
 
-function Payant(key) {
-  if (!(this instanceof Payant)) {
-    return new Payant(key);
-  }
-
-  this.key = key;
-  this.importResources();
+function Payant(key, demo_flag) {
+	if (!(this instanceof Payant)) {
+	    return new Payant(key, demo_flag);
+	}
+	
+	this.root = demo_flag || demo_flag === undefined ? 'https://api.demo.payant.ng' : 'https://api.payant.ng';
+  	this.key = key;
+  	this.importResources();
 }
 
 Payant.prototype = {
@@ -63,7 +63,7 @@ Payant.prototype = {
 			}
 	    	
 	    	var parameters, options, callback, method, data, request_options,
-	    	    endpoint = [root, resource.endpoint].join('');
+	    	    endpoint = [self.root, resource.endpoint].join('');
 	    
 			// Convert argument to array
 			var parameters = convert_to_array(arguments);
