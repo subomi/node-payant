@@ -128,9 +128,7 @@ Payant.prototype = {
           				return;
           			}
           			else if(body.status === "error"){
-            			error = body;
-            			body = null;
-            			reject(error);
+            			reject(body);
             			return;
             		}
             		else {

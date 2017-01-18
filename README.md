@@ -19,7 +19,7 @@ npm install node-payant
 | **Clients.edit**       | Yes     | Yes - `firstname, lastname, email, phone`  |
 | **Clients.delete**     | Yes     | Nil        |
 | | | |
-| **Invoices.add**       | Nil     | Yes - `firstname, lastname, email, phone`  |
+| **Invoices.add**       | Nil     | Yes - `firstname, lastname, email, phone` or `client_id, due_date, fee_bearer, items` |
 | **Invoices.get**       | Yes     | Nil        |
 | **Invoices.send**      | Yes     | Nil        |
 | **Invoices.history**   | Nil     | Yes - `period` |
