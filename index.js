@@ -57,7 +57,11 @@ Payant.prototype = {
 					if(!(item in data)) {
 						return false;
 					} else {
+						// Phone number fix - does not look right to me - a neater PR would be nice
+						if(item === "phone")
+							data.phone = "+" + data['phone'];
 						return true;
+						
 					}
 				});
 			}
