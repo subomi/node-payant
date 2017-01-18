@@ -8,7 +8,9 @@ module.exports = {
   create: {
       method: 'post',
       endpoint: root,
-      params: ['reference_code*', 'date*', 'amount*', 'channel*']
+      params: [
+      			['reference_code*', 'date*', 'amount*', 'channel*']
+    		  ]
     },
 
   //  Get Payment
@@ -22,6 +24,8 @@ module.exports = {
   history: {
       method: 'post',
       endpoint: [root, '/history'].join(''),
-      params: ['period*', 'start', 'end']
+      params: [
+      			['period*', 'start', 'end']
+    		  ]
     },
 };

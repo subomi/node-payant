@@ -44,14 +44,32 @@ Payant.prototype = {
 			
 				return main_split.join("/");
 			}  	
+			
+			function params_test(data, array) {
+			
+				return array.every(function(item, index, array) {
+					if(item.indexOf("*") === -1) {
+						// Not required
+					}
+					// Required
+					item = item.replace("*", "");
+
+					if(!(item in data)) {
+						return false;
+					} else {
+						return true;
+					}
+				});
+			}
 	    	
 	    	var parameters, options, callback, method, data, request_options,
 	    	    endpoint = [root, resource.endpoint].join('');
 	    
 			// Convert argument to array
 			var parameters = convert_to_array(arguments);
-		
+			
 			options = parameters[0];
+			data = options.data;  // Data provided
 			
 			// Method checking 
       		method = resource.method in {"get":'', "post":'', "put":'', "delete":''}
@@ -74,23 +92,16 @@ Payant.prototype = {
 			
 			// Checking for post data
 			if(resource.params) {
-				var resource_list = resource.params;
+				var resource_list = resource.params,
+					index = 0,
+					bool = params_test(data, resource_list[index]);
 				
-				// Post data passed
-				data = options.data;
-				resource_list.filter(function(item, index, array) {
-					if(item.indexOf("*") === -1) {
-						// Not required
-						return;
+				while(!bool) {
+					if(!resource_list[index++]) {
+						throw new Error ("Required Parameters Ommitted");
 					}
-					item = item.replace("*", "");
-
-					if(!(item in data)) {
-						throw new Error("Required Parameters Ommited - " + item);
-					}
-					return;
-
-				});
+					bool = params_test(data, resource_list[index++]);
+				}
 			}
 			
 			// Making request
@@ -131,12 +142,12 @@ Payant.prototype = {
                		// This is an hack for nodejs 7.2.0
             		return Promise.fulfill(callback(null, value));
             	}
-            	return value;
+            	return Promise.fulfill(value);
             }, function(reason) {
                	if(callback) {
             		return Promise.reject(callback(reason, null));
             	}
-            	return reason;
+            	return Promise.reject(reason);
             });
 		}
 	},

@@ -9,7 +9,10 @@ module.exports = {
   add: {
       method: 'post',
       endpoint: root,
-      params: ['first_name*', 'last_name*', 'email*', 'phone*']
+      params: [
+      			['first_name*', 'last_name*', 'email*', 'phone*'],
+      			['client_id*', 'due_date*', 'fee_bearer*', 'items*']
+      		  ]
     },
 
   //  Get Invoice
@@ -30,7 +33,9 @@ module.exports = {
   history: {
       method: 'post',
       endpoint: [root, '/history'].join(''),
-      params: ['period*', 'start', 'end']
+      params: [
+      			['period*', 'start', 'end'],
+      		  ]
     },
 
   //  Delete Invoice

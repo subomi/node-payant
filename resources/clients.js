@@ -8,7 +8,9 @@ module.exports = {
   add: {
       method: 'post',
       endpoint: root,
-      params: ['first_name*', 'last_name*', 'email*', 'phone*']
+      params: [
+      			['first_name*', 'last_name*', 'email*', 'phone*']
+  			  ]
   },
 
   //  Get customer
@@ -23,7 +25,9 @@ module.exports = {
   	  method: 'put',
   	  endpoint: [root, '/{ref}'].join(''),
   	  args: ['ref'],
-  	  params: ['first_name*', 'last_name*', 'email*', 'phone*']
+  	  params: [
+  	  			['first_name*', 'last_name*', 'email*', 'phone*']
+  			  ]
   },
   
   //  List customers
